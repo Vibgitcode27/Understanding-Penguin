@@ -1,0 +1,30 @@
+	THIS CHAPTER GOALS 
+		
+		.Manage Graphical Interfaces
+		.Perform operations with GUI
+		.Change Graphical Desktop
+		
+ X Windows System is loaded as one of the final steps in boot process. Often times its called X , a service called the display manager keeps track of the display being provided and loads the X server so called because it provides graphical services to applications , sometimes called X client. The display manager also handles graphical logins and starts the sppropriate desktop environment after user logs in. 
+ 				X is rather old software , it dates back to mid-1980's and as such it has certain deficiencies on Mordern systems for example with security and its been stretched rather far from its orignial purpose.
+ 				Newer system known as "Weyland" is superscceeding it and is default display system for Fedora , REL-8 and other recent distribution. It looks like X to the user its quite different but under the hood.
+
+Desktop Environment Contains:- 
+
+		1> Session Manager:
+			Which starts and maintains the components of the graphical session and the window manager.
+		2> Window Manager:
+			It controls placement and movement of Windows and windows title bar and controls altough these can be mixed generally a set of utilities session manager and Window manager are used together as unit.
+			
+	Session Manager 	+ Window Manager	+ A set of utilities
+					|
+					|
+					|
+			   Seamless Desktop Environment 
+					 
+		GNOME is used in Red Hat Enterprise Linux , RHEL , Fedora , CentOS , SUSE Enterprise , Ubuntu and Debian.
+		Look and feel of GNOME can be quite different in different destributions.
+		
+	KDE is yet another desktop environment which is widely used in history of linux , which is often been used in conjunction ith SUSE and openSUSE.
+	
+	
+		  

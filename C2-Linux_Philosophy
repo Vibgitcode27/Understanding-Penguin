@@ -1,0 +1,58 @@
+	LINUX TERMINOLOGY
+		
+		:Kernel
+		:distribution
+		:bootloader
+		:service
+		:filesystem
+		:X Window system
+		:desktop environments
+		:command line
+		
+ *Kernal 
+ 	:- Glue between hardware and applications
+ *destribution 
+ 	:- Collection of software making up linux-based OS
+ 	   eg. Fedora , Ubuntu , Gentoo
+*bootloader
+	:- Program that boots the operating syatem
+	   eg. GRUB and ISOLINUXs
+*service
+	:- Program that runs as a background process
+	   eg. httpd , nfsd , ntpd , ftpd and named
+*filesystem
+	:- Method of storing and organizing files
+	   eg. ext3 , ext4 , FAT , XFS , NTFS and Btrfs (butterFS)
+*X Window system
+	:- It provides standard tool kits and protocols to build Graphical User Interfaces in         nearly all LINUX Systems
+*desktop environments
+	:- Graphical User Interface on top of operating system
+	   eg. GNOME , KDE , Xfce and Fluxbox
+*command line
+	:- It is an interface for typing commands on top of the operating systems
+    +SHELL 
+    	:- Its is a command line interpreter that interprets the command line input and instructs the operating system to perform any necessary tasks and commands
+    	eg. BASH , tcsh , zsh
+    	
+    	
+LINUX DESTRIBUTIONS
+	Its is not a all or nothing proposition
+
+SERVICE ASSOCIATED WITH LINUX DESTRIBUTIONS
+
+Derstributions are designed to cater wide varity of users, but large organizations use commercially supported destributions like : RED HAT , SUSE , Canonical(basically Ubuntu)
+
+Ubuntu and Fedora are used by various developers and for various educational and scientific and mathematical purposes
+
+Provide regural updates and performance enhancements.
+
+ ***   SUMMARY
+ 	
+ 	- Linux borrows heavily form UNIX OS.
+ 	- Linux accesses mini features through files and file like objects.
+ 	- Linux is multi-tasking and multiUser OS with built-in networking and service processors known as daemons
+ 	- Terminology used by Linux User Community
+ 	- Linux Destribution include kernal and bunch other software tools
+ 	
+$ exit
+ 	

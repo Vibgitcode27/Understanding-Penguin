@@ -1,0 +1,129 @@
+ 	This chapter includes:-
+ 		- Identify Linux filesystems
+ 		- Identify differences: partions vs filesystems
+ 		- Describe the boot process
+ 		- Install Linux on a computer
+ 		
+ 1> BIOS (First Step)
+ 
+ 	It initalizes the hardware including screen and keyboard and test main memory (It is also called post power on process)
+ 	BIOS software is stored on ROM chip on the motherboard
+ 
+ 2> Master Boot Record(MBR) and Boot Loader (Step 2)
+ 
+ 	Its is basically loaded on one of the hard disks in the system either in the boot sector for traditional bios or MBR systems or the EFI partions for more recent or unified extinsible firmware interfaces or EFI , UFI systems
+ 	
+ 	Machine does not access any mass storage media upto this stage.
+ 	
+ 	Now important information like date , time and other important periferals are loaded from the CMOS values for 
+ 	
+3> Bootloader 
+
+	There are various bootloaders exist for linux the most common one's are GRUB (Grand Unified Bootloader) , ISOLINUX for booting from remoable media.
+	
+4> Initial RAM disk - initramfs image
+
+	bootloader is responsible for loading kernal image and initial RAM disk or file system  into memory.
+	
+	BOOTLOADER IN ACTION
+			
+			Bootloader resides at first sector at hard disk , also known as master boot record.
+			The size of MBR is just 512B , in this stage bootloader examines the partition table and finds bootable partition , and then it serches for second stage bootloader eg. GRUB and loads it into RAM for systems using UFI/U EFI method.
+			
+			UEFI firmware reads its boot manager data to dertermine which UEFI application is to be launched and from where. The firmware then launches the UEFI application for example GRUB as defined in the boot entry in the firmware's bootmanager.
+			
+			The second stage bootloader resides under /boot. A splash screen is displayed which allows us to choose which operating system to boot.
+			
+			Ater choosing OS , bootloader loads the kernal of the selected operating sytem into RAM and pasees control to it. Kernals are always compressed so its first job is to uncompress itself, after this it will check and analyse the system harware and initialize any hardware device drivers built into the kernal
+			
+
+INITIAL RAM DISK
+	
+	It contains all programs and files that perform all actions needed to mount the proper root file systems like providing kernal functionaliy for the needed file system and device drivers for mass storage controllers with facility called "udev" for the user device which is responsible for figuring out which devices are present locating the device drivers they need to operate properly and loading them. After the root file system has been found it's checked for errors that mounted the mount program instructs the operating system that a file system is ready for use and associates with particular point in the overall hierarchy of the file system , the mount point.
+	
+	If this is successfull the init RAM fs is cleared from RAM and the init program from the root file system is executed and it handles the mounting and pivoting over to the final real root file system if special hardware drivers are needed before the mass storage can be accessed they must be in the RAM FS image.
+	
+TEXT MODE LOGINS 
+
+	Near the end of boot process and it starts a number of text mode login prompts. THese enable you to type your username followed by your password and to eventually get a command shell.
+	Howeever , you are running a system with Graphical Login Interface you'll not see this at first. Usually the default command shell is Bash but there are number of advance command shells available.
+	
+THE LINUX KERNAL
+
+	The bootloader loads the kernal and an initial ram-based file system into memory so it can be used directly by the kernal when the kernal is loaded in RAM it immediately initializes and configures the computer memory. It also configures all the hardware attached to the system this include all processors  IO subsystems , storage devices and more , the kernal also loades some user space applications.
+	
+5> /sbin/init and Services
+
+	Once kernal has setup all the hardware and mounted to the root file systems the kernl runs the S bin /init this then beomes the initial process which then starts other processes to get the system running. Most other processors on the system trace their origin ultimately to 'init' , exceptions include the so called kernal processes. 
+	
+	These are served by the kernal directly and their job is to manage internal operating system detailes. Besides starting the system 'init' is responsible keeping the system running and for shutting it down cleanly.
+	
+	Its responsiblity is to act when necessary as a manager for all the non-kernal processes. It cleans up after them upon completion and restarts user login services as needed when users log in and out and does the same for other background system services.
+	
+	Traditiionally this process startup was done using conventions that date back to 1980's and the the system V variety of UNIX. This serial process had system passing through a sequennce of run kevels containing collections of scrits that start and stop services. Each run level supported of different mode of running the system within each run level. Individual Service could be set to run or to be shut down if running however all major diistributions have moved away fro this sequential run level method of system initialization. Altough they usually emulate amny syste mV utilities for comaptiblity pourposes.
+	
+
+SYSTEMD
+
+	Systems with systemd start up faster than those with earlier init methods. This is largely because it replaces a serialized set of steps with aggressive paralization techniques which oermits multiple services to be initiated simultaneously. It has been adapted by all major destributions.
+	Complicated startup scripts are replaced with simpler configuration files which enumerates what has to be done before a service. How to execute service start up and what conditions the service shoukd indicate have been accomplished when startup is finished.
+	
+  */sbin/init ***** now just points to    ->      /lib/systemd/systemd *  
+  
+  One systemd command is used for most basic tasks.
+  	cmd :- systemctl
+  	
+  	Startind Stopping restarting a service(using httpd , the apache web server, as an example) on a currently running system:
+  	
+  	$ sudo systemctl start | stop | restart httpd.service
+  	
+  	Enabling or disabling a system service from starting up at system boot
+  	
+  	$ sudo systemctl enable | disable httpd.service
+  	
+ LINUX FILESYSTEM BASICS
+ 
+ 	FilesSystems supported by Linux
+ 	
+ 	1. Conventional disk FileSystem
+ 	   (ect3 , ect4 , XFS , NTFS, vfat, etc.)
+ 	2. Flash storage filesystems
+ 	   (ubifs , jffs2 , yaffs ,etc.)
+ 	3. Database File Systems
+ 	
+ 	4. Special Purpose filesystems
+ 	   (porcfs , sysfs , tmpfs , debugfs, etc.)
+ 	   
+ 	   
+PARTIONS AND FILESYSTEMS
+
+THE FILESYSTEM HIERARCHY STANDARD
+ 	
+	Linux systems store their file according to the standard layout called the FILESYSTEM HIERARCHY STANDARD (FSH) which is maintained in linux foundation.
+	
+	This standard is made so that users can easily moved b/w systems without having to learn how system is organized.
+	
+	Linux does not have multiple drive letters. Multiple files and or partitions are mounted as directories in the single file system.
+	Removable media will show as mounted at 
+	  	/run/media/<username>/disklabel (for recent linux systems)
+	  	or 
+	  	/media (for older linux destributions)
+	  	
+	eg. While useing FEDORA you will find your USB at
+		/run/media/student/FEDORA
+		/run/media/student/FEDORA/Readme.txt
+	
+	All linux filesystems are case sensitive :- (*IMPORTANT)
+		These different ways of spelling boot is representing 3 different directories or folders
+			/boot
+			/Boot
+			/BOOT
+		
+VIEWING THE FILESYSTEM HIERARVHY FROM GRAPHICAL INTERFACE.
+
+LINUX DESTRIBUTION INSTALLATION
+	
+	    
+	  	
+	  	
+	

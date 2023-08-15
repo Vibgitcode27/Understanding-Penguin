@@ -1,0 +1,37 @@
+
+* Preload :- Speed Up launch times with preloads
+cmd :- install preload
+
+*Live Patch
+ Create Ubuntu One Account
+ Subscribe to Ubuntu Pro
+ Enable Live Patch
+ 
+ *Customize Keyboard Shortcuts
+ 
+ System Backup
+ TimeShift
+ cmd :- sudo apt install timeshift
+ 
+ *Run windows apps with linuc with Bottles
+ 
+ 
+*Higher battery consumption in Ubantu (Using tlp)
+cmd :- sudo apt install tlp tlp-rdw
+cmd :- sudo systemctl enable tlp
+cmd :- sudo systemctl start tlp
+cmd :- sudo system status tlp
+
+*Clean System and Save spaces (Using bleachbit)
+cmd :- sudo apt install bleachbit
+
+*Fixing freeze after suspending machine
+cmd :- sudo nautilus
+
+other_locations > computer > etc > default > grub (text file)
+
+line number 11 comes like -> GRUB_CMDLINE_LINUX=""
+in double quotes you have to add nouveau.modeset=0 : LIKE THIS ->
+GRUB_CMDLINE_LINUX="nouveau.modeset=0"
+
+cmd :- sudo update-grub

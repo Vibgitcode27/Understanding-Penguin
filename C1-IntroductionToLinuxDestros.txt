@@ -1,0 +1,45 @@
+
+* Red Hat Family Systems (RHEL)
+
+include centos , centos stream , Fedora and Oracle Lynux
+RHEL linux destributions
+Fedora has more software than RHE version because fedora has more diverse community 
+
+KEY FACTS ABOUT Red Hat Family
+
+ - Fedora is an upstream testing platfrom for RHEL
+ - CentOS is close clone of RHEL
+ - Uses yum package mangaer
+
+
+
+
+* SUSE Family Systems
+
+Open SUSE is an reference destribution for the SUSE family and its (free)
+
+ - SLES is upstream for openSUSE
+ - Uses RPM based zipped package manager
+ - YaST for system admin purposes
+ - Widely used in retail
+
+
+
+
+
+
+* Debian Family Systems
+
+Debian destribution is an upstream for several other destribution including UBUNTU and ,
+UBUNTU is upstream for linux MINT and other destributions.
+
+ + Debian is a pure open-soure project which is not owned by any organization (focused on   	stability)
+ + It provides by far most complete repository in for any linux destributions
+ + Ubuntu provides good compromise between long term stability and ease of use.
+ 
+KEY FACTS ABOUT Debian Family
+
+ - Debian family is upstream for Ubuntu and Ubuntu is upstream for other destributions.
+ - It uses DPKG-based APT package manager
+ - Ubuntu has been  widely used for cloud deployments
+ - Ubuntu is based on Debain and GNOME-based under the hood but differs visually
