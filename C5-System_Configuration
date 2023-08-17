@@ -1,0 +1,44 @@
+
+* Mobile Broadbands and VPN Connections:
+	
+	You can set up mobile broadbrand connection with network manager , which will launch a wizard to set up the connection deatails for each connection. Once the configuration is done the network is configured automatically each time the broadband network is attached.
+					Network  manager can also manage your VPN connections.
+It supports many VPN technologies such as:
+			
+			> IPsec
+			> Cisco OpenConnect
+			> Microsoft pptp
+			> Open VPN
+			
+* Installing and Updating Software:
+		
+		Each package in Linux distribution provides one piece of the system such as Linux Kernal , C compiler , Utilities for manipulating text or configuring the network or for your favourite web browsrs and email clients.
+		
+		Packages often depend on each other for example you email client communicates using SSL , TLS it will depend on a package which provides ability to encrypt and decrypt SSL and  TLS communication and will not install unless that package is also installed at the same time.
+		All systems have a lower level utility which handles the details of unpacking a package and putting the pieces into right places. Most of the time you will be working with higher level utility which knows how to download packages from the internet and can manage dependencies and groups for you.
+		
+	Debian Pacakging System  (used by Ubuntu)
+	RPM packaging systens (used by Red Hat and SUSE family systems)
+	etc.
+	
+**** Debian Package Manager:
+
+		$ dpkg         ---- is underlying pacakge manager for these systems.
+		
+		It can install , remove and build pacakges. Unlike high level pacakge management systems it does not automatically download and install pacakges and satisfy their deopendencies.
+		
+	For debian based systems the higher level package management system is the advanced package tool or apt system of utilities.
+	
+				Apt
+				 |
+			   dpkg-installer
+			   	 |
+			 Debian Family Linux
+			 
+	Generally each distribution within the debian family uses apt it creates it own user interface on top of it for eg.
+		 apt-get
+		 Synaptic
+		 Ubuntu Software Centre etc.
+		 
+	
+		 

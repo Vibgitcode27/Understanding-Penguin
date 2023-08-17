@@ -28,7 +28,7 @@
 	BOOTLOADER IN ACTION
 			
 			Bootloader resides at first sector at hard disk , also known as master boot record.
-			The size of MBR is just 512B , in this stage bootloader examines the partition table and finds bootable partition , and then it serches for second stage bootloader eg. GRUB and loads it into RAM for systems using UFI/U EFI method.
+			The size of MBR is just 512B , in this stage bootloader examines the partition table and finds bootable partition , and then it serches for second stage bootloader eg. GRUB and loads it into RAM for systems using UFI/UEFI method.
 			
 			UEFI firmware reads its boot manager data to dertermine which UEFI application is to be launched and from where. The firmware then launches the UEFI application for example GRUB as defined in the boot entry in the firmware's bootmanager.
 			
