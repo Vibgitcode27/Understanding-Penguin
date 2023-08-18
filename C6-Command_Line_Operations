@@ -1,0 +1,117 @@
+	    This chapter includes:
+			: Use of command line
+			: Search for files
+			: Create amd manage files 
+			: Install and update software
+		
+		structure of command
+		
+		command		-options	arguments
+		
+			Is -a /home/angela
+
+1> SUDO 		
+	$ sudo :- allows users to run programs using the security priviledges of another user , 	generally /root or superuser
+
+	$ sudo ls -la /root 
+
+	To SetUp sudo
+		$ su
+		Enter password and you will see an unusual response
+		# echo "student ALL=(ALL) ALL" > /etc/sudoers.d/<name>
+		// Some computer will complain if you do not change permissions from the file , then enter this command.
+		# chmod 440 /etc/sudoers.s/student
+***********************************************************************************************
+
+2> VIRTUAL TERMINALS (VT's)
+
+	Alt + Ctrl + F(3 to 5)
+	
+	to access different Virtual terminals at same time and to switch between them.
+	
+	All of them provides CLI except one with both CLI and GUI.
+	
+	You can also drop the GUI if you want to temperorily or permanantly. Removing GUI from a production server can be very helpful in maintaining a lean system and keep secure.
+	
+
+   *Turning off the graphical Desktop
+   	
+   	You can stop GUI desktop using System Control Utility or "telinit"
+   			
+   			$ sudo systemctl stop gdm
+   			or
+   			$ sudo system telinit 3
+   	to start Graphical Interface again.
+   			
+   			$ sudo systemctl start gdm
+   			or
+   			$ sudo telinit 5
+   			
+***************************************** BASIC OPERTAIONS ***********************************  
+
+3> LOGGING IN AND OUT
+
+	You can connect to remote systems using SSH
+		$ ssh <username>@<ip of server>
+		$ ssh vibhor@192.468.4.2
+	or you can use cryptographic key to login without password.
+	
+***********************************************************************************************
+
+4> REBOOTING AND SHUTTING DOWN
+	
+	"halt" and "poweroff" command issue shutdown -h
+	reboot issues shutdown -r.
+	these process requires superuser or root access.
+	
+    -for shutdown with message to all users.
+  		
+  		$ sudo shutdown -h 10:10 "Shutdown for scheduled"
+    
+    -for reboot with message to all users 
+		 
+		 $ sudo shutdown -h 10:10 "Shutdown for scheduled"
+	
+***********************************************************************************************
+
+5> LOCATING ALPPLICATIONS
+
+		In general executable program and scripts should live in:
+			"/bin" or "/usr/bin" or "sbin" or "/usr/sbin"
+			or
+			/opt
+			or
+			/usr/local/bin and /usr/local/sbin
+			
+		or in a directory in user's account space such as
+			/home/student/bin 	
+	
+	One way to locate programs is to employe the which utility fro eg. to,locate where diff program resides on the file system.
+			
+		$ which diff /usr/bin/diff  (diff is just a file name use can use firefox , snap anything)
+	
+	if which doesn't find the program where is the good alternative because it looks for packages in a broader range of system directories
+		
+		$ whereis diff      (to locate the binary or manual of file)
+
+***********************************************************************************************
+
+5> Accessing Directories
+	
+	Default directory is home directory.
+		
+		$ echo $HOME (It print the HOME directory path.)
+		
+		$ pwd  (displays present working directory)
+		
+		$ cd .. (Change to parent directory.)
+		
+		$ cd - (Chnage to previous directory.)
+		
+		$ pushd /tmp  (It will show previious where you were)
+		
+		$ popd 
+	
+	HARD LINKS
+		
+		

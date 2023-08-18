@@ -21,11 +21,11 @@ It supports many VPN technologies such as:
 	RPM packaging systens (used by Red Hat and SUSE family systems)
 	etc.
 	
-**** Debian Package Manager:
+******** Debian Package Manager:
 
 		$ dpkg         ---- is underlying pacakge manager for these systems.
 		
-		It can install , remove and build pacakges. Unlike high level pacakge management systems it does not automatically download and install pacakges and satisfy their deopendencies.
+		It can install , remove and build pacakges. Unlike high level pacakge management systems it does not automatically download and install pacakges and satisfy their dependencies.
 		
 	For debian based systems the higher level package management system is the advanced package tool or apt system of utilities.
 	
@@ -40,5 +40,7 @@ It supports many VPN technologies such as:
 		 Synaptic
 		 Ubuntu Software Centre etc.
 		 
-	
-		 
+******** Red Hat Package Manager
+		
+******** openSUSE's YaST Software Management		  
+
